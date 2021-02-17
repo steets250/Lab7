@@ -100,7 +100,8 @@
                 return response.text();
               }
             })
-          .then((data) => output.textContent = data);
+          .then((data) => output.textContent = data)
+          .catch((error) => output.textContent = error);
       }
 
       // This function should fetch one entry from the given endpoint.
@@ -126,7 +127,8 @@
                 return response.text();
               }
             })
-          .then((data) => output.textContent = data);
+          .then((data) => output.textContent = data)
+          .catch((error) => output.textContent = error);
       }
 
       // This function should use fetch to create one entry in the given endpoint.
@@ -170,7 +172,8 @@
                   return response.text();
                 }
               })
-              .then((data) => output.textContent = data);
+              .then((data) => output.textContent = data)
+              .catch((error) => output.textContent = error);
             break;
         
           default:
@@ -224,7 +227,8 @@
                   return response.text();
                 }
               })
-              .then((data) => output.textContent = data);
+              .then((data) => output.textContent = data)
+              .catch((error) => output.textContent = error);
             break;
         
           default:
@@ -256,7 +260,8 @@
               return response.text();
             }
           })
-          .then((data) => output.textContent = data);
+          .then((data) => output.textContent = data)
+          .catch((error) => output.textContent = error);
       }
 
       window.addEventListener('DOMContentLoaded', () => {
