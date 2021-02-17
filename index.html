@@ -95,7 +95,7 @@
         fetch(endpointValue)
           .then((response) => {
               if (!response.ok) {
-                return response.statusText;;
+                return response.status + ': ' + response.statusText;
               } else {
                 return response.text();
               }
@@ -121,7 +121,7 @@
         fetch(endpointValue + '/' + id)
           .then((response) => {
               if (!response.ok) {
-                return response.statusText;;
+                return response.status + ': ' + response.statusText;
               } else {
                 return response.text();
               }
@@ -165,7 +165,7 @@
             })
               .then((response) => {
                 if (!response.ok) {
-                  return response.statusText;;
+                  return response.status + ': ' + response.statusText;
                 } else {
                   return response.text();
                 }
@@ -219,7 +219,7 @@
             })
               .then((response) => {
                 if (!response.ok) {
-                  return response.statusText;;
+                  return response.status + ': ' + response.statusText;
                 } else {
                   return response.text();
                 }
@@ -251,7 +251,7 @@
         fetch(endpointValue + '/' + id, { method: 'DELETE' })
           .then((response) => {
             if (!response.ok) {
-              return response.statusText;;
+              return response.status + ': ' + response.statusText;
             } else {
               return response.text();
             }
