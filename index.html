@@ -93,7 +93,13 @@
         const output = document.getElementById('output');
 
         fetch(endpointValue)
-          .then((response) => response.text())
+          .then((response) => {
+              if (!response.ok) {
+                return response.statusText;;
+              } else {
+                return response.text();
+              }
+            })
           .then((data) => output.textContent = data);
       }
 
@@ -113,7 +119,13 @@
         const output = document.getElementById('output');
 
         fetch(endpointValue + '/' + id)
-          .then((response) => response.text())
+          .then((response) => {
+              if (!response.ok) {
+                return response.statusText;;
+              } else {
+                return response.text();
+              }
+            })
           .then((data) => output.textContent = data);
       }
 
@@ -151,7 +163,13 @@
               method: 'POST',
               body: JSON.stringify({authorValue, titleValue}),
             })
-              .then((response) => response.text())
+              .then((response) => {
+                if (!response.ok) {
+                  return response.statusText;;
+                } else {
+                  return response.text();
+                }
+              })
               .then((data) => output.textContent = data);
             break;
         
@@ -199,7 +217,13 @@
               method: 'PUT',
               body: JSON.stringify({authorValue, titleValue}),
             })
-              .then((response) => response.text())
+              .then((response) => {
+                if (!response.ok) {
+                  return response.statusText;;
+                } else {
+                  return response.text();
+                }
+              })
               .then((data) => output.textContent = data);
             break;
         
@@ -225,7 +249,13 @@
         const output = document.getElementById('output');
 
         fetch(endpointValue + '/' + id, { method: 'DELETE' })
-          .then((response) => response.text())
+          .then((response) => {
+            if (!response.ok) {
+              return response.statusText;;
+            } else {
+              return response.text();
+            }
+          })
           .then((data) => output.textContent = data);
       }
 
